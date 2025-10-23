@@ -7,10 +7,12 @@ If you want details on the original, you can find them [here](https://github.com
 - More configuration options in the settings modal, namely:
   - [ ] Corner radius
   - [ ] Easing/animation curve settings
-- [ ] Fixing the default user matugen configs so they link properly to the .config directory in home when parsed by the `matugen-worker`
-- [ ] Allowing more customization in the appearance of the workspace switcher (length/height of pills, etc.)
-- [ ] Allowing some popouts/slideins (notepad, tabs in DankDash, etc.) to match animation speed with the rest of DMS
-- Maybe more
+- I also want to fix a couple of bugs, such as:
+  - [ ] Fixing the default user matugen configs so they link properly to the .config directory in home when parsed by the `matugen-worker`
+  - [ ] Allowing more customization in the appearance of the workspace switcher (length/height of pills, etc.)
+  - [ ] Allowing some popouts/slideins (notepad, tabs in DankDash, etc.) to match animation speed with the rest of DMS
+
+This list may increase as I use DMS more, as I learned about it fairly recently.
 
 ## Why do I have my own branch?
 
