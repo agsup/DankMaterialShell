@@ -162,7 +162,7 @@ BasePill {
 
                         anchors.verticalCenter: parent.verticalCenter
                         width: textWidth
-                        height: 20
+                        height: root.widgetThickness
                         visible: SettingsData.mediaSize > 0
                         clip: true
                         color: "transparent"
@@ -176,7 +176,6 @@ BasePill {
                             text: textContainer.displayText
                             font.pixelSize: Theme.barTextSize(root.barThickness)
                             color: Theme.surfaceText
-                            font.weight: Font.Medium
                             wrapMode: Text.NoWrap
                             x: needsScrolling ? -scrollOffset : 0
                             onTextChanged: {

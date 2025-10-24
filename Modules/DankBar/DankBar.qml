@@ -235,11 +235,11 @@ Item {
             Connections {
                 target: PluginService
                 function onPluginLoaded(pluginId) {
-                    console.log("DankBar: Plugin loaded:", pluginId)
+                    console.info("DankBar: Plugin loaded:", pluginId)
                     SettingsData.widgetDataChanged()
                 }
                 function onPluginUnloaded(pluginId) {
-                    console.log("DankBar: Plugin unloaded:", pluginId)
+                    console.info("DankBar: Plugin unloaded:", pluginId)
                     SettingsData.widgetDataChanged()
                 }
             }
@@ -832,6 +832,7 @@ Item {
                                     id: launcherButtonComponent
 
                                     LauncherButton {
+                                        id: launcherButton
                                         isActive: false
                                         widgetThickness: barWindow.widgetThickness
                                         barThickness: barWindow.effectiveBarThickness
@@ -841,6 +842,12 @@ Item {
                                         hyprlandOverviewLoader: root.hyprlandOverviewLoader
                                         onClicked: {
                                             appDrawerLoader.active = true
+                                            if (appDrawerLoader.item && appDrawerLoader.item.setTriggerPosition) {
+                                                const globalPos = launcherButton.visualContent.mapToGlobal(0, 0)
+                                                const currentScreen = barWindow.screen
+                                                const pos = SettingsData.getPopupTriggerPosition(globalPos, currentScreen, barWindow.effectiveBarThickness, launcherButton.visualWidth)
+                                                appDrawerLoader.item.setTriggerPosition(pos.x, pos.y, pos.width, launcherButton.section, currentScreen)
+                                            }
                                             appDrawerLoader.item?.toggle()
                                         }
                                     }
@@ -1232,13 +1239,19 @@ Item {
                                 Component {
                                     id: separatorComponent
 
-                                    Rectangle {
-                                        width: barWindow.isVertical ? barWindow.widgetThickness * 0.67 : 1
-                                        height: barWindow.isVertical ? 1 : barWindow.widgetThickness * 0.67
+                                    Item {
+                                        width: barWindow.isVertical ? parent.barThickness : 1
+                                        height: barWindow.isVertical ? 1 : parent.barThickness
                                         implicitWidth: width
                                         implicitHeight: height
-                                        color: Theme.outline
-                                        opacity: 0.3
+
+                                        Rectangle {
+                                            width: barWindow.isVertical ? parent.width * 0.6 : 1
+                                            height: barWindow.isVertical ? 1 : parent.height * 0.6
+                                            anchors.centerIn: parent
+                                            color: Theme.outline
+                                            opacity: 0.3
+                                        }
                                     }
                                 }
 
