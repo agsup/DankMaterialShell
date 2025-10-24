@@ -79,7 +79,7 @@ PanelWindow {
             Behavior on x {
                 NumberAnimation {
                     id: slideAnimation
-                    duration: 450
+                    duration: SettingsData.customAnimationDuration
                     easing.type: Easing.OutCubic
 
                     onRunningChanged: {

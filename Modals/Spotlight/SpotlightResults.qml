@@ -195,7 +195,7 @@ Rectangle {
         id: resultsGrid
 
         property int currentIndex: appLauncher ? appLauncher.selectedIndex : -1
-        property int columns: 4
+        property int columns: 8
         property bool adaptiveColumns: false
         property int minCellWidth: 120
         property int maxCellWidth: 160

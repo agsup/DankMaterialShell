@@ -76,7 +76,7 @@ DankModal {
     }
 
     shouldBeVisible: spotlightOpen
-    width: 550
+    width: 1200
     height: 700
     backgroundColor: Theme.popupBackground()
     cornerRadius: Theme.cornerRadius

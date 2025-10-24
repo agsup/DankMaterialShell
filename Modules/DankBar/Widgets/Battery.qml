@@ -91,6 +91,7 @@ BasePill {
                     color: Theme.surfaceText
                     anchors.verticalCenter: parent.verticalCenter
                     visible: BatteryService.batteryAvailable
+                    rightPadding: 6
                 }
             }
         }

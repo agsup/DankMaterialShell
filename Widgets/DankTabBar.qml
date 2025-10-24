@@ -154,7 +154,7 @@ FocusScope {
                     opacity: tabArea.pressed ? 0.12 : (tabArea.containsMouse ? 0.08 : 0)
                     visible: opacity > 0
                     radius: Theme.cornerRadius
-                    Behavior on opacity { NumberAnimation { duration: Theme.shortDuration; easing.type: Theme.standardEasing } }
+                    Behavior on opacity { NumberAnimation { duration: Theme.SettingsData.customAnimationDuration; easing.type: Theme.standardEasing } }
                 }
 
                 MouseArea {
@@ -193,7 +193,7 @@ FocusScope {
         Behavior on x {
             enabled: indicator.animationEnabled
             NumberAnimation {
-                duration: Theme.mediumDuration
+                duration: Theme.customAnimationDuration
                 easing.type: Theme.standardEasing
             }
         }
@@ -201,7 +201,7 @@ FocusScope {
         Behavior on width {
             enabled: indicator.animationEnabled
             NumberAnimation {
-                duration: Theme.mediumDuration
+                duration: Theme.customAnimationDuration
                 easing.type: Theme.standardEasing
             }
         }

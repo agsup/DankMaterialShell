@@ -319,7 +319,8 @@ Item {
                 keyNavigationEnabled: false
                 activeFocusOnTab: false
                 highlightFollowsCurrentItem: true
-                highlightMoveDuration: enableAnimation ? Theme.shortDuration : 0
+                // highlightMoveDuration: enableAnimation ? Theme.SettingsData.customAnimationDuration : 0
+                highlightMoveDuration: Theme.SettingsData.customAnimationDuration
                 focus: false
 
                 highlight: Item {

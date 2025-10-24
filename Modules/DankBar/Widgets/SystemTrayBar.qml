@@ -128,7 +128,6 @@ Item {
 
                     MouseArea {
                         id: trayItemArea
-
                         anchors.fill: parent
                         acceptedButtons: Qt.LeftButton | Qt.RightButton
                         hoverEnabled: true
